@@ -63,15 +63,15 @@ function Banner() {
           </a>
         </div>
       </div>
-
       {/* Right Image */}
-      <div className="w-110 md:w-1/2 h-90 flex justify-center md:justify-end">
+      <div className="w-110 md:w-1/2 h-90 flex justify-center md:justify-center">
         <img
           className="h-60 md:h-80 rounded-full border-4 border-white shadow-lg object-cove "
           src="./images/deepak_pic.jpg"
           alt="Deepak Chauhan"
         />
       </div>
+      s
     </div>
   );
 }
