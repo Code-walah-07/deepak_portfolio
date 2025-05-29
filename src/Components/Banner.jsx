@@ -18,10 +18,10 @@ function Banner() {
   }, []);
 
   return (
-    <div className="flex flex-col-reverse md:flex-row items-center px-8 justify-center md:px-16  min-h-screen  text-white">
+    <div className="flex  flex-col-reverse md:flex-row items-start md:items-center px-6 md:px-16 py-10 md:py-4 h-120 text-white">
       {/* Left Content */}
-      <div className="w-full md:w-1/2 flex flex-col items-start md:items-start justify-center text-center md:text-left mb-30 md:mb-0">
-        <h2 className="font-bold text-3xl md:text-4xl mb-4">
+      <div className="w-full md:w-1/2 flex flex-col items-start justify-center text-left mt-10 md:mt-0">
+        <h2 className="font-bold text-2xl md:text-4xl mb-4">
           Hello! I'm Deepak Chauhan
         </h2>
         <p className="font-semibold text-xl md:text-2xl">
@@ -30,7 +30,7 @@ function Banner() {
             {words[index]}.
           </span>
         </p>
-        <div className="flex gap-6 text-3xl mt-8 justify-center md:justify-start">
+        <div className="flex gap-6 text-3xl mt-8">
           <a
             href="https://www.linkedin.com/in/deepak-chauhan-69426622b/"
             target="_blank"
@@ -65,9 +65,9 @@ function Banner() {
       </div>
 
       {/* Right Image */}
-      <div className="w-full md:w-1/2 flex justify-center pb-20">
+      <div className="w-110 md:w-1/2 h-90 flex justify-center md:justify-end">
         <img
-          className="h-60 md:h-80 rounded-full border-4 border-white shadow-lg object-cover"
+          className="h-60 md:h-80 rounded-full border-4 border-white shadow-lg object-cove "
           src="./images/deepak_pic.jpg"
           alt="Deepak Chauhan"
         />
