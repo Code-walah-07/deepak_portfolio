@@ -9,17 +9,21 @@ import { useState, useEffect } from "react";
 function Banner() {
   const words = ["Coding", "Web Developing", "Frontend Development", "Cricket"];
   const [index, setIndex] = useState(0);
+  const [fade, setFade] = useState(true);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % words.length);
-    }, 2000);
+      setFade(false); // Start fade-out
+      setTimeout(() => {
+        setIndex((prevIndex) => (prevIndex + 1) % words.length);
+        setFade(true); // Fade back in
+      }, 300); // Matches fade duration
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="flex flex-col-reverse md:flex-row items-start md:items-center px-6 md:px-16 py-10 md:py-16 h-130  text-white">
-      
       {/* Left Content */}
       <div className="w-full md:w-1/2 flex flex-col items-start justify-center text-left mt-10 md:mt-0  pt-5">
         <h2 className="font-bold text-2xl md:text-4xl mb-4">
@@ -27,7 +31,10 @@ function Banner() {
         </h2>
         <p className="font-semibold text-xl md:text-2xl">
           I like{" "}
-          <span className="text-slate-900 bg-white px-3 py-1 rounded-2xl transition-all duration-300">
+          <span
+            className={`text-slate-900 bg-white px-3 py-1 rounded-2xl inline-block transition-all duration-300 transform
+  ${fade ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}`}
+          >
             {words[index]}.
           </span>
         </p>
