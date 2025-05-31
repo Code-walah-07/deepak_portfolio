@@ -33,7 +33,7 @@ function Banner() {
         <p className="font-semibold text-xl md:text-2xl">
           I like{" "}
           <span
-            className={`text-slate-900 bg-white px-3 py-1 rounded-2xl inline-block transition-all duration-300 transform
+            className={`text-slate-900 bg-orange-200 px-3 py-1 rounded-2xl inline-block transition-all duration-300 transform
   ${fade ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}`}
           >
             {words[index]}.
@@ -80,7 +80,7 @@ function Banner() {
       {/* Right Image */}
       <div className="w-full md:w-1/2 flex justify-center md:justify-center pt-10">
         <img
-          className="h-60 md:h-80 rounded-full border-4 border-white shadow-lg object-cover"
+          className="h-60 md:h-70 rounded-full border-4 border-white shadow-lg object-cover"
           src="./images/deepak_pic.jpg"
           alt="Deepak Chauhan"
         />

@@ -2,11 +2,11 @@ function About() {
   return (
     <section
       id="about"
-      className="py-5 px-3 md:px-20 dark:text-gray-100"
+      className="py-5 px-3 md:px-20 dark:text-gray-100 w-full"
       data-aos="fade-up"
     >
       <h2
-        className="text-xl md:text-4xl font-bold mb-6 text-center"
+        className="text-xl md:text-2xl font-bold mb-6 text-center"
         data-aos="fade-up"
       >
         About Me
