@@ -1,45 +1,62 @@
-import { useState } from "react";
-import { Menu, X } from "lucide-react"; // You can also use any icon library like react-icons
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
 
 function Header_class() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const navItems = ["About", "Projects", "Skills", "Contact"];
 
-  return (
-    <header className="flex items-center justify-between px-6 py-4 sticky top-0 z-50  text-white ">
-      <div className="text-2xl font-bold">Deepak Chauhan</div>
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY >10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-      {/* Desktop Navigation */}
-      <nav className="hidden md:flex gap-6 text-sd font-semibold">
-        {navItems.map((item) => (
+  return (
+    <header
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        isScrolled ? "backdrop-blur-md bg-transparent shadow-md" : "bg-transparent"
+      } text-white`}
+    >
+      <div className="flex items-center justify-between px-6 py-4">
+        <div className="text-2xl font-bold text-orange-400">Deepak Chauhan</div>
+
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex text-sm font-semibold">
+          {navItems.map((item) => (
+            <a
+              key={item}
+              href={`#${item.toLowerCase()}`}
+              className="relative px-4 py-2 transition-all duration-100 ease-in-out 
+                hover:text-white overflow-hidden rounded-2xl group"
+            >
+              <span className="absolute inset-0 bg-slate-600 scale-0 group-hover:scale-100 transition-transform duration-300 ease-in-out origin-center z-[-1] rounded-2xl"></span>
+              {item}
+            </a>
+          ))}
+        </nav>
+
+        {/* Resume Link (Desktop) */}
+        <div className="hidden md:block">
           <a
-            key={item}
-            href={`#${item.toLowerCase()}`}
-            className="relative px-4 py-2 transition-all duration-100 ease-in-out 
-              hover:text-white overflow-hidden rounded-2xl group"
+            href="/resume.pdf"
+            className="btn-primary text-lg font-semibold rounded-2xl p-2 px-3 hover:bg-slate-600 hover:text-white"
           >
-            <span className="absolute inset-0 bg-slate-600 scale-0 group-hover:scale-100 transition-transform duration-300 ease-in-out origin-center z-[-1] rounded-2xl"></span>
-            {item}
+            Resume
           </a>
-        ))}
-        
-      </nav>
-        <div >
-          <a 
-          href="/resume.pdf"
-          className="btn-primary text-lg font-semibold rounded-2xl p-2 px-3 hover:bg-slate-600 hover:text-white"
-        >
-          Resume
-        </a>
         </div>
-      {/* Hamburger Button */}
-      <button
-        className="md:hidden text-white"
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
-      >
-        {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
-      </button>
+
+        {/* Hamburger Button */}
+        <button
+          className="md:hidden text-white"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
+      </div>
 
       {/* Mobile Menu */}
       {isMenuOpen && (

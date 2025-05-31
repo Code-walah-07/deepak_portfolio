@@ -4,6 +4,7 @@ import {
   faGithub,
   faHackerrank,
 } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect } from "react";
 
 function Banner() {
@@ -23,9 +24,9 @@ function Banner() {
   }, []);
 
   return (
-    <div className="flex flex-col-reverse md:flex-row items-start md:items-center px-6 md:px-16 py-10 md:py-16 h-130  text-white">
+    <div className="flex flex-col-reverse md:flex-row items-start md:items-center px-6 md:px-16 pt-32 md:pt-16 pb-10 text-white">
       {/* Left Content */}
-      <div className="w-full md:w-1/2 flex flex-col items-start justify-center text-left mt-10 md:mt-0  pt-5">
+      <div className="w-full md:w-1/2 flex flex-col items-start justify-center text-left mt-10 md:mt-0 ">
         <h2 className="font-bold text-2xl md:text-4xl mb-4">
           Hello! I'm Deepak Chauhan
         </h2>
@@ -38,7 +39,11 @@ function Banner() {
             {words[index]}.
           </span>
         </p>
-        <div className="flex gap-6 text-3xl mt-8">
+        <div className=" flex text-sm gap-1 pt-2">
+          <FontAwesomeIcon className="pt-1" icon={faEnvelope} />
+          <h2 className="">dchauhan2159@gmail.com</h2>
+        </div>
+        <div className="flex gap-6 text-3xl mt-5">
           <a
             href="https://www.linkedin.com/in/deepak-chauhan-69426622b/"
             target="_blank"
@@ -73,7 +78,7 @@ function Banner() {
       </div>
 
       {/* Right Image */}
-      <div className="w-full md:w-1/2 flex justify-center md:justify-center ">
+      <div className="w-full md:w-1/2 flex justify-center md:justify-center pt-10">
         <img
           className="h-60 md:h-80 rounded-full border-4 border-white shadow-lg object-cover"
           src="./images/deepak_pic.jpg"
