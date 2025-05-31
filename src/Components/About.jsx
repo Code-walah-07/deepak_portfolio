@@ -2,7 +2,7 @@ function About() {
   return (
     <section
       id="about"
-      className="py-16 px-6 md:px-20 dark:text-gray-100"
+      className="py-5 px-3 md:px-20 dark:text-gray-100"
       data-aos="fade-up"
     >
       <h2
@@ -42,8 +42,8 @@ function About() {
         data-aos="fade-up"
         data-aos-delay="300"
       >
-        Outside of tech, I love playing cricket, exploring new technologies,
-        and collaborating with other developers on creative projects.
+        Outside of tech, I love playing cricket, exploring new technologies, and
+        collaborating with other developers on creative projects.
       </p>
     </section>
   );
